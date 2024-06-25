@@ -54,6 +54,7 @@ ARCHIVER_ST_BRANCH = "v${LINUX_VERSION}-${LINUX_TARGET}"
 ARCHIVER_ST_REVISION = "v${LINUX_VERSION}-${LINUX_TARGET}-${LINUX_RELEASE}"
 ARCHIVER_COMMUNITY_BRANCH = "linux-${LINUX_VERSION}.y"
 ARCHIVER_COMMUNITY_REVISION = "v${LINUX_VERSION}${LINUX_SUBVERSION}"
+KIWI_BRANCH = "onekiwi-v6.1-stm32mp-r1.1"
 
 S = "${WORKDIR}/${LINUX_TARBASE}"
 
@@ -62,8 +63,11 @@ S = "${WORKDIR}/${LINUX_TARBASE}"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/linux-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
 SRCREV:class-devupstream = "47937a24f0ed893d100fe94a566c6bd83dd78de5"
+
+#SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRCREV:class-devupstream = "47937a24f0ed893d100fe94a566c6bd83dd78de5"
 #FIXME force the PV to avoid build issue:
 #  do_package: ExpansionError('SRCPV', '${@bb.fetch2.get_srcrev(d)}', FetchError('SRCREV was used yet no valid SCM was found in SRC_URI', None))
 PV:class-devupstream = "${LINUX_VERSION}${LINUX_SUBVERSION}-${LINUX_TARGET}.${SRCPV}"

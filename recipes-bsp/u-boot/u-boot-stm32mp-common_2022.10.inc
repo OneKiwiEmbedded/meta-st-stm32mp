@@ -48,6 +48,7 @@ ARCHIVER_ST_BRANCH = "${U_BOOT_VERSION}-${U_BOOT_SUBVERSION}"
 ARCHIVER_ST_REVISION = "${PV}"
 ARCHIVER_COMMUNITY_BRANCH = "master"
 ARCHIVER_COMMUNITY_REVISION = "${U_BOOT_VERSION}"
+KIWI_BRANCH = "onekiwi-v2022.10-stm32mp-r1.1"
 
 S = "${WORKDIR}/git"
 
@@ -56,8 +57,11 @@ S = "${WORKDIR}/git"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/u-boot.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/uboot-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
 SRCREV:class-devupstream = "2c7a6accfa78d34c402fa262bb53f0b952198882"
+
+#SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/u-boot.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRCREV:class-devupstream = "2c7a6accfa78d34c402fa262bb53f0b952198882"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
