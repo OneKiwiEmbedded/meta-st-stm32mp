@@ -82,6 +82,7 @@ UBOOT_EXTLINUX_TARGETS_EXTRA_CONFIG[stm32mp157f-ev1] += "stm32mp157f-ev1-m4-exam
 
 UBOOT_EXTLINUX_TARGETS_EXTRA_CONFIG[stm32mp135f-dk] += "stm32mp135f-dk-a7-examples"
 UBOOT_EXTLINUX_TARGETS_EXTRA_CONFIG[stm32mp13xxae-som-r1x256v10] += "stm32mp13xxae-som-r1x256v10-a7-examples"
+UBOOT_EXTLINUX_TARGETS_EXTRA_CONFIG[stm32mp135x-256m] += "stm32mp135x-256m-a7-examples"
 
 # -----------------------------------------------------------------------------
 # Configure A7 examples labels
@@ -95,6 +96,7 @@ UBOOT_EXTLINUX_FDT:stm32mp157f-ev1-a7-examples = "/stm32mp157f-ev1-a7-examples.d
 
 UBOOT_EXTLINUX_FDT:stm32mp135f-dk-a7-examples = "/stm32mp135f-dk-a7-examples.dtb"
 UBOOT_EXTLINUX_FDT:stm32mp13xxae-som-r1x256v10-a7-examples = "/stm32mp13xxae-som-r1x256v10-a7-examples.dtb"
+UBOOT_EXTLINUX_FDT:stm32mp135x-256m-a7-examples = "/stm32mp135x-256m-a7-examples.dtb"
 
 # -----------------------------------------------------------------------------
 # Configure M4 examples labels
