@@ -645,6 +645,7 @@ UBOOT_CONFIG:append:stm32mp15common = " ${@bb.utils.contains_any('BOOTSCHEME_LAB
 # STM32mp13
 UBOOT_CONFIG:append:stm32mp13common = " ${@bb.utils.contains_any('BOOTSCHEME_LABELS', 'optee', 'trusted_stm32mp13', '', d)} "
 UBOOT_CONFIG:append:stm32mp13common = " ${@bb.utils.contains_any('BOOTSCHEME_LABELS', 'fastboot', bb.utils.contains('BOOTDEVICE_LABELS', 'sdcard', 'fastboot-sdcard_stm32mp13', '', d), '', d)} "
+UBOOT_CONFIG:append:stm32mp13common = " ${@bb.utils.contains_any('BOOTSCHEME_LABELS', 'fastboot', bb.utils.contains('BOOTDEVICE_LABELS', 'emmc', 'fastboot-emmc_stm32mp13', '', d), '', d)} "
 
 # Select u-boot binary that needs specific devicetree suffix (from UBOOT_DEVICETREE)
 # 'u-boot-nodtb.bin' and 'u-boot.dtb' : prefer 'u-boot.dtb' binary as 'u-boot-nodtb.bin'
@@ -656,6 +657,7 @@ UBOOT_CONFIG[fastboot-sdcard_stm32mp15] = "stm32mp15-fastboot-sdcard_defconfig,,
 UBOOT_CONFIG[fastboot-emmc_stm32mp15] = "stm32mp15-fastboot-emmc_defconfig,,u-boot.dtb"
 UBOOT_CONFIG[trusted_stm32mp13] = "stm32mp13_defconfig,,u-boot.dtb"
 UBOOT_CONFIG[fastboot-sdcard_stm32mp13] = "stm32mp13-fastboot-sdcard_defconfig,,u-boot.dtb"
+UBOOT_CONFIG[fastboot-emmc_stm32mp13] = "stm32mp13-fastboot-emmc_defconfig,,u-boot.dtb"
 
 # List of U-Boot device tree to use
 UBOOT_DEVICETREE = "${STM32MP_DEVICETREE}"
@@ -734,7 +736,7 @@ ST_OPTEE_DEBUG_TRACE ?= "${@bb.utils.contains('ST_DEBUG_TRACE', '1', '1', '0', d
 # Configure fip build
 FIP_CONFIG += "${@bb.utils.contains('BOOTSCHEME_LABELS', 'optee', 'optee', '', d)}"
 FIP_CONFIG += "${@bb.utils.contains_any('UBOOT_CONFIG', [ 'fastboot-sdcard_stm32mp15', 'fastboot-sdcard_stm32mp13' ], 'fastboot-sdcard', '', d)}"
-FIP_CONFIG += "${@bb.utils.contains_any('UBOOT_CONFIG', [ 'fastboot-emmc_stm32mp15' ], 'fastboot-emmc', '', d)}"
+FIP_CONFIG += "${@bb.utils.contains_any('UBOOT_CONFIG', [ 'fastboot-emmc_stm32mp15', 'fastboot-emmc_stm32mp13' ], 'fastboot-emmc', '', d)}"
 
 # Define config for each FIP_CONFIG
 FIP_CONFIG[optee]   ?= "optee,${FIP_DEVICETREE_OPTEE},trusted"
