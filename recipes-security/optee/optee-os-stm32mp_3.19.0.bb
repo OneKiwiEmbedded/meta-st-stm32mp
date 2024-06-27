@@ -51,7 +51,7 @@ include ${@oe.utils.ifelse(d.getVar('ST_ARCHIVER_ENABLE') == '1', 'optee-os-stm3
 BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/optee_os-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
-SRCREV:class-devupstream = "85132601f2b5264317ed27e6efb6f4f0f3bceeb6"
+SRCREV:class-devupstream = "6a8ea9f0a42302e55c8e07ae262e7cb243b36cc6"
 
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/optee_os.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "d0159bbfa266dcb0e12c01712e258b86e4d67f51"

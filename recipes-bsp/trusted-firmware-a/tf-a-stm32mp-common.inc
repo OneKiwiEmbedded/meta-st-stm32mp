@@ -35,7 +35,7 @@ S = "${WORKDIR}/git"
 BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/atf-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
-SRCREV:class-devupstream = "824ede7cd9e79ffa194d4f470773dcd6ee2821eb"
+SRCREV:class-devupstream = "0566e42c862d613d6af6c8ff6f77f4471863556f"
 
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/arm-trusted-firmware.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "4cb13dd54264991db408c6c3237ca4774dd68194"
