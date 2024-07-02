@@ -23,6 +23,7 @@ ARCHIVER_ST_BRANCH = "${TF_A_VERSION}-${TF_A_SUBVERSION}"
 ARCHIVER_ST_REVISION = "${PV}"
 ARCHIVER_COMMUNITY_BRANCH = "master"
 ARCHIVER_COMMUNITY_REVISION = "${TF_A_VERSION}"
+KIWI_BRANCH = "onekiwi-mp13-v2.6-stm32mp-r2.1"
 
 S = "${WORKDIR}/git"
 
@@ -31,8 +32,11 @@ S = "${WORKDIR}/git"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/arm-trusted-firmware.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/atf-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
 SRCREV:class-devupstream = "aa1e9e2db80e49ed0259757a0f09ff119725409d"
+
+#SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/arm-trusted-firmware.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRCREV:class-devupstream = "aa1e9e2db80e49ed0259757a0f09ff119725409d"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github

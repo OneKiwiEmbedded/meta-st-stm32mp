@@ -49,6 +49,7 @@ ARCHIVER_ST_BRANCH = "v${LINUX_VERSION}-${LINUX_TARGET}"
 ARCHIVER_ST_REVISION = "v${LINUX_VERSION}-${LINUX_TARGET}-${LINUX_RELEASE}"
 ARCHIVER_COMMUNITY_BRANCH = "linux-${LINUX_VERSION}.y"
 ARCHIVER_COMMUNITY_REVISION = "v${LINUX_VERSION}.${LINUX_SUBVERSION}"
+KIWI_BRANCH = "onekiwi-mp13-v5.15-stm32mp-r2.1"
 
 S = "${WORKDIR}/linux-${LINUX_VERSION}.${LINUX_SUBVERSION}"
 
@@ -58,8 +59,11 @@ S = "${WORKDIR}/linux-${LINUX_VERSION}.${LINUX_SUBVERSION}"
 # ---------------------------------
 BBCLASSEXTEND = "devupstream:target"
 
-SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/linux-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
 SRCREV:class-devupstream = "61ca40c154195a5b3b288db386086f0bf9c5273f"
+
+#SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
+#SRCREV:class-devupstream = "61ca40c154195a5b3b288db386086f0bf9c5273f"
 
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
