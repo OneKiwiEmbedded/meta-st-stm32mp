@@ -52,7 +52,8 @@ include ${@oe.utils.ifelse(d.getVar('ST_ARCHIVER_ENABLE') == '1', 'optee-os-stm3
 BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/optee_os-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
-SRCREV:class-devupstream = "7f2b5122ff2b593c213cda19f2d853598bf1e723"
+SRCREV:class-devupstream = "${AUTOREV}"
+#SRCREV:class-devupstream = "7f2b5122ff2b593c213cda19f2d853598bf1e723"
 
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/optee_os.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "b8750c4600166f0019a8c1cf35362b1889840ec3"
@@ -60,6 +61,7 @@ SRCREV:class-devupstream = "7f2b5122ff2b593c213cda19f2d853598bf1e723"
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
 # ---------------------------------
-STM32MP_SOURCE_SELECTION ?= "tarball"
+#STM32MP_SOURCE_SELECTION ?= "tarball"
+STM32MP_SOURCE_SELECTION ?= "github"
 
 DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"

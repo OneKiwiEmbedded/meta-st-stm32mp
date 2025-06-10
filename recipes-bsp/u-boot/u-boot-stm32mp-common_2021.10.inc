@@ -53,7 +53,8 @@ S = "${WORKDIR}/git"
 BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/uboot-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
-SRCREV:class-devupstream = "03c7b50ae9723ef863977361b72441f7a30990ed"
+SRCREV:class-devupstream = "${AUTOREV}"
+#SRCREV:class-devupstream = "03c7b50ae9723ef863977361b72441f7a30990ed"
 
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/u-boot.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "d1bbf3f7edb786fe854034810355e750b08a9851"
@@ -61,6 +62,7 @@ SRCREV:class-devupstream = "03c7b50ae9723ef863977361b72441f7a30990ed"
 # ---------------------------------
 # Configure default preference to manage dynamic selection between tarball and github
 # ---------------------------------
-STM32MP_SOURCE_SELECTION ?= "tarball"
+#STM32MP_SOURCE_SELECTION ?= "tarball"
+STM32MP_SOURCE_SELECTION ?= "github"
 
 DEFAULT_PREFERENCE = "${@bb.utils.contains('STM32MP_SOURCE_SELECTION', 'github', '-1', '1', d)}"
