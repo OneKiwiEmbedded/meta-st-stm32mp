@@ -58,7 +58,7 @@ S = "${WORKDIR}/git"
 BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/uboot-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
-SRCREV:class-devupstream = "6202a2f1b506204aed04e4752a7de7687b0196cc"
+SRCREV:class-devupstream = "edd7e455024d678b47fa7755d39b22b83cb35cd7"
 
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/u-boot.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "2c7a6accfa78d34c402fa262bb53f0b952198882"
