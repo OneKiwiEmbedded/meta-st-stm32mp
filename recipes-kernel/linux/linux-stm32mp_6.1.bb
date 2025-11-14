@@ -64,7 +64,7 @@ S = "${WORKDIR}/${LINUX_TARBASE}"
 BBCLASSEXTEND = "devupstream:target"
 
 SRC_URI:class-devupstream = "git://github.com/OneKiwiEmbedded/linux-stm32mp.git;protocol=https;branch=${KIWI_BRANCH}"
-SRCREV:class-devupstream = "a2ae1774f1b2bdb0661c0e59b7ac41c5a418405f"
+SRCREV:class-devupstream = "${AUTOREV}"
 
 #SRC_URI:class-devupstream = "git://github.com/STMicroelectronics/linux.git;protocol=https;branch=${ARCHIVER_ST_BRANCH}"
 #SRCREV:class-devupstream = "47937a24f0ed893d100fe94a566c6bd83dd78de5"
